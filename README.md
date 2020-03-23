@@ -20,9 +20,9 @@ Topic(s) | Points | Difficulty (in my opinion)
 #### Solution: 
 This problem was really interesting and took me a while to figure out. 
 
-The key was figuring out the few hints in the challenge description. Wu isn't somee random person, he's the author of a paper on [Pixel Value Differencing](https://people.cs.nctu.edu.tw/~whtsai/Journal%20Paper%20PDFs/Wu_&_Tsai_PRL_2003.pdf).
+The key was figuring out the few hints in the challenge description. Wu isn't some random person, he's the author of a paper on [Pixel Value Differencing](https://people.cs.nctu.edu.tw/~whtsai/Journal%20Paper%20PDFs/Wu_&_Tsai_PRL_2003.pdf).
 
-A quick read of the paper specifies algorithm to encode and decode these images but I wasn't arsed to implement it myself so I looked up one on github and found one with nearly the exact same challenge description by [zst-ctf](https://github.com/zst-ctf/tjctf-2019-writeups/blob/master/Writeups/Planning_Virtual_Distruction/README.md).
+A quick read of the paper specifies an algorithm to encode and decode these images but I wasn't arsed to implement it myself so I looked one up on github and found one with nearly the exact same challenge description by [zst-ctf](https://github.com/zst-ctf/tjctf-2019-writeups/blob/master/Writeups/Planning_Virtual_Distruction/README.md).
 
 I quickly tried his python script only to find that it didn't work.
 I read over the paper again and found another set of range widths [2, 2, 4, 4, 4,8, 8, 16, 16, 32, 32, 64, and 64] and adjusted the if statements to suit. [Adjusted Python Script](src/Stegosaurus/Stegosaurus.py)
