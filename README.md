@@ -5,7 +5,7 @@ This is a bit brief but I'll add more as we go along.
 
 I started preparing for this CTF around 3-4 days prior and this was my first CTF so it was certainly difficult.
 
-There were a few helpful resources that helped me. Primarily [Conor Mac Amhlaoibh](https://github.com/conormccauley1999/HackTrinity19Writeups/blob/master/README.md)'s write up for last years HackTrinity which helped me get a good feel for competition.
+There were quite a few helpful resources. Primarily [Conor Mac Amhlaoibh](https://github.com/conormccauley1999/HackTrinity19Writeups/blob/master/README.md)'s write up for last years HackTrinity which helped me get a good feel for competition.
 
 ## Solved Problems
 
