@@ -167,4 +167,4 @@ The only one that looked out of the blue is: xn---f0d-m-py-fg-dcb81av7aegg3f74af
 Typing that into the browser and we get:
 ![flag](images/DomainNamesSuck/flag.png)
 
-Our flag is: **xn---f0d-m-py-fg-dcb81av7aegg3f74afb6qka.hacktrinity.org** except without the hacktrinity.org part.
+Copy the flag subdomain in and claim our points.
