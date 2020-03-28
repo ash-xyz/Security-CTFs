@@ -1,7 +1,7 @@
 # HackTrinity 2020 Solutions
 
 Write up's for HackTrinity 2020.
-This is a bit brief but I'll add more as we go along.
+This is a bit brief but I'll eventually add more.
 
 I started preparing for this CTF around 3-4 days prior and this was my first CTF so it was certainly difficult.
 
