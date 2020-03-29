@@ -38,7 +38,8 @@ Topic(s) | Points | Difficulty
 
 ##### Challenge:
     So I found this program on a hacking forum. The OP attached it to the thread saying he'd found a way to share his flag and you can't read it without knowing the password. I have no idea what the password is, but there were a lot of others laughing at OP saying they got the flag. Can you get it for me?
-[Link](src/LockedOut/locked_out)
+[Link to locked_out executable](src/LockedOut/locked_out)
+
 #### Solution:
 This challenge actually has 2 solutions and the only reason I'm giving it a medium is because I took so long to find the reversing one. The second solution is discussed in [Locked Out 2](#Locked-Out-2)
 
@@ -96,7 +97,7 @@ Topic(s) | Points | Difficulty (in my opinion)
 `web` | `350` | ![Hard](https://img.shields.io/badge/-Hard-orange.svg)
 ##### Challenge:
     There's a new sysadmin in town and he thinks he's real cool. Apparently he's been working hard on his new website...
-
+    
     You can find the server at 192.168.140.1.
 #### Solution:
 This challenge was by no means hard, it's actually rediculously easy. But rest assured, I've spent more time on this one question than I have on some of my modules.
@@ -146,7 +147,7 @@ Topic(s) | Points | Difficulty
 `Recon` | `379` | ![Easy](https://img.shields.io/badge/-Easy-green.svg)
 #### Challenge:
     Somebody pwned our DNS a while back and set up a website on a subdomain. They've since cleaned it out and we don't know what the website was called. We're all about transparency here at HackTrinity so we'd like to let our users know.
-
+    
     Note: This flag will not be in the standard HackTrinity{} format
 #### Solution:
 This challenge required a particular attention to detail.
@@ -168,3 +169,67 @@ Typing that into the browser and we get:
 ![flag](images/DomainNamesSuck/flag.png)
 
 Copy the flag subdomain in and claim our points.
+
+### Ancient
+Topic(s) | Points | Difficulty
+---------|--------|-----------
+`Web` | `360` | ![Easy](https://img.shields.io/badge/-Easy-green.svg)
+#### Challenge:
+    With the current outbreak of COVID-19, Trinity have decided to hold all of the final examinations online on the "Exam-n" system.
+    
+    Can you reverse engineer the system and recover the answers to score a perfect 100 on your Ancient Memes exam?
+    
+    You can find the server at 192.168.151.1.
+#### Solution:
+This was a super handy problem, hence the easy difficulty.
+
+The website is pretty simple, you enter an answer and press check. If your answer is right, it outputs correct.
+
+Scrolling down, we find a question that asks for the flag. We can assume that's where our flag is.
+
+![website](images/Ancient/website.png)
+
+If you inspect element, we find that there exists a check.js
+
+So I downloaded the website using:
+```
+wget -r -l 0 http://192.168.151.1:80/
+```
+
+Opening our check.js, we find a function which checks whether each character of our input is equal to the encrypted answer
+```javascript
+function c(id, i, l) {
+    // debugger;
+
+    let answer = document.getElementById(`answer${id}`).value;
+
+    if(answer.length !== l) {
+        return false;
+    }
+
+    for(i_a=0; i_a<l; i_a++) {
+        let char = answer[i_a];
+        let blk = blks[i];
+        
+        if (!blk || (enc(char) !== get_blk(i))) {
+            return false;
+        }
+        i++;
+    }
+
+    return true;
+}
+```
+
+I wasn't bothered to decrypt the encrypted answer so instead I brute forced it. Using their encrypt function, I checked every single ascii character against the corresponding encrypted answer, until each encrypted character of ascii is equal to the encrypted answer. Simultaneously, I was appending each character to a flag variable.
+
+![decrypt](images/Ancient/decrypt.png)
+
+Now when we put in any random answer, it triggers our check function(c).
+This will then trigger our brute force, solve and print the flag to the console.
+
+![flag](images/Ancient/flag.png)
+
+Our flag is revealed!
+
+Flag: **HackTrinity{vibration_TV_mine_sky}**
