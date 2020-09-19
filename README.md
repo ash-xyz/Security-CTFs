@@ -1,3 +1,3 @@
 # Security Competitions
 
-Solutions to  a few security competitions.
+Solutions to a few security competitions.
