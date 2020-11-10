@@ -1,0 +1,1 @@
+print("".join(chr(ord(o)^13) for o in "label"))
