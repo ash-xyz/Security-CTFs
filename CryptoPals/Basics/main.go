@@ -9,4 +9,6 @@ func main() {
 	fmt.Println("Challenge 4: ", solveChallenge4())
 	fmt.Println("Challenge 5:")
 	solveChallenge5()
+
+	solveChallenge6()
 }
