@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// fmt.Println("Challenge 1: ", solveChallenge1())
 	// fmt.Println("Challenge 2: ", solveChallenge2())
@@ -9,4 +11,5 @@ func main() {
 	// solveChallenge5()
 	// solveChallenge6()
 	solveChallenge7()
+	fmt.Println("Challenge 8: ", solveChallenge8())
 }
