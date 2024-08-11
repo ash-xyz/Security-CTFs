@@ -23,9 +23,8 @@ func hammingDistance(s1, s2 string) int {
 	return dist
 }
 
-func getChallenge6Input() []byte {
-
-	file, err := os.Open("input/6.txt")
+func getBase64ToBytesFromPath(path string) []byte {
+	file, err := os.Open(path)
 	if err != nil {
 		panic(err)
 	}
@@ -47,6 +46,9 @@ func getChallenge6Input() []byte {
 	}
 
 	return decodedData
+}
+func getChallenge6Input() []byte {
+	return getBase64ToBytesFromPath("input/6.txt")
 }
 
 func transposeBytes(blockSize int, bytes []byte) [][]byte {
